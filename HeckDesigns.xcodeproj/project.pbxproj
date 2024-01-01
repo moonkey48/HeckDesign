@@ -29,8 +29,8 @@
 		95D489012B4193380079D09D /* dummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D489002B4193380079D09D /* dummyData.swift */; };
 		95D489232B424B490079D09D /* PersistentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D489222B424B490079D09D /* PersistentController.swift */; };
 		95D489262B424BC10079D09D /* HeckModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 95D489242B424BC10079D09D /* HeckModel.xcdatamodeld */; };
+		95D489282B4254AF0079D09D /* HeckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D489272B4254AF0079D09D /* HeckViewModel.swift */; };
 		95F4A7EB2A559180009CFCCA /* GitTestFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F4A7EA2A559180009CFCCA /* GitTestFile.swift */; };
-		95F57DBA2A4167AF00516E46 /* DBTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F57DB92A4167AF00516E46 /* DBTestView.swift */; };
 		95F57DBD2A42C48000516E46 /* ImageFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F57DBC2A42C48000516E46 /* ImageFileManager.swift */; };
 		95F57DBF2A42C5CF00516E46 /* ImageSaveTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F57DBE2A42C5CF00516E46 /* ImageSaveTestView.swift */; };
 		95F6E4462A3834190024D0A9 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F6E4452A3834190024D0A9 /* ImagePickerView.swift */; };
@@ -60,8 +60,8 @@
 		95D489002B4193380079D09D /* dummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dummyData.swift; sourceTree = "<group>"; };
 		95D489222B424B490079D09D /* PersistentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentController.swift; sourceTree = "<group>"; };
 		95D489252B424BC10079D09D /* HeckModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HeckModel.xcdatamodel; sourceTree = "<group>"; };
+		95D489272B4254AF0079D09D /* HeckViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeckViewModel.swift; sourceTree = "<group>"; };
 		95F4A7EA2A559180009CFCCA /* GitTestFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitTestFile.swift; sourceTree = "<group>"; };
-		95F57DB92A4167AF00516E46 /* DBTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBTestView.swift; sourceTree = "<group>"; };
 		95F57DBC2A42C48000516E46 /* ImageFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFileManager.swift; sourceTree = "<group>"; };
 		95F57DBE2A42C5CF00516E46 /* ImageSaveTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaveTestView.swift; sourceTree = "<group>"; };
 		95F6E4452A3834190024D0A9 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
@@ -152,7 +152,6 @@
 				95D488FE2B4192EA0079D09D /* ListModelType.swift */,
 				95D489002B4193380079D09D /* dummyData.swift */,
 				95D489222B424B490079D09D /* PersistentController.swift */,
-				95D489242B424BC10079D09D /* HeckModel.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -160,6 +159,7 @@
 		9597A00A2A2F509D0004431D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				95D489272B4254AF0079D09D /* HeckViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -191,6 +191,7 @@
 		95D488FC2B41929C0079D09D /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				95D489242B424BC10079D09D /* HeckModel.xcdatamodeld */,
 				95979FFB2A2F4DB90004431D /* ContentView.swift */,
 				95979FF92A2F4DB90004431D /* HeckDesignsApp.swift */,
 				9597A0072A2F50750004431D /* View */,
@@ -225,7 +226,6 @@
 		95F57DC02A42C5F800516E46 /* Test */ = {
 			isa = PBXGroup;
 			children = (
-				95F57DB92A4167AF00516E46 /* DBTestView.swift */,
 				95F57DBE2A42C5CF00516E46 /* ImageSaveTestView.swift */,
 				95F4A7EA2A559180009CFCCA /* GitTestFile.swift */,
 			);
@@ -317,7 +317,6 @@
 				95D489012B4193380079D09D /* dummyData.swift in Sources */,
 				9552C80E2A36F4E400417339 /* AddItemView.swift in Sources */,
 				9597A0102A2F5BE70004431D /* IssueView.swift in Sources */,
-				95F57DBA2A4167AF00516E46 /* DBTestView.swift in Sources */,
 				95F57DBD2A42C48000516E46 /* ImageFileManager.swift in Sources */,
 				95F6E4462A3834190024D0A9 /* ImagePickerView.swift in Sources */,
 				95B5168E2A3C159D00D04B69 /* FavoriteSampleView.swift in Sources */,
@@ -325,6 +324,7 @@
 				95F57DBF2A42C5CF00516E46 /* ImageSaveTestView.swift in Sources */,
 				9552C80C2A3604DC00417339 /* ColorExtension.swift in Sources */,
 				95D488FF2B4192EA0079D09D /* ListModelType.swift in Sources */,
+				95D489282B4254AF0079D09D /* HeckViewModel.swift in Sources */,
 				9597A00E2A2F5BDF0004431D /* NiceView.swift in Sources */,
 				95A5F84F2A4040C000F781FB /* DBHelper.swift in Sources */,
 			);

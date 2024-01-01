@@ -11,7 +11,7 @@ struct AddItemView: View {
     private let fileManager = ImageFileManager.shared
     private let dbHelper = DBHelper.shared
     private var groupTypes: [GroupType] = [.heck, .nice, .issue]
-    private let listModel = ListModel.shared
+    
     
     @Environment(\.presentationMode) var presentationMode
     @State private var title = ""
@@ -95,12 +95,12 @@ struct AddItemView: View {
                 }
             )
             .navigationBarItems(trailing: Button("추가", action: {
-                addNewItemToModel(
-                    title: title,
-                    image: selectedImage,
-                    description: description,
-                    group: selectedType,
-                    id: newId)
+//                addNewItemToModel(
+//                    title: title,
+//                    image: selectedImage,
+//                    description: description,
+//                    group: selectedType,
+//                    id: newId)
                 
                 addNewItemToDB(
                     title: title,
@@ -115,56 +115,57 @@ struct AddItemView: View {
             .sheet(isPresented: $isSelecting) {
                 ImagePicker(selectedImage: $selectedImage)
             }
-            .onAppear {
-                newId = listModel.heckList.count + listModel.niceList.count + listModel.issueList.count + 1
-            }
+//            .onAppear {
+//                newId = listModel.heckList.count + listModel.niceList.count + listModel.issueList.count + 1
+//            }
         }
     }
 }
 
 extension AddItemView {
     
-    func addNewItemToModel(title: String,
-                           image: UIImage,
-                           description: String,
-                           group: GroupType,
-                           id: Int) {
-        switch selectedType {
-        case .heck:
-            listModel.heckList.append(
-                ListItem(
-                    title: title,
-                    image: selectedImage,
-                    description: description,
-                    group: .heck,
-                    id: newId,
-                    uid: String(newId)
-                )
-            )
-        case .nice:
-            listModel.issueList.append(
-                ListItem(
-                    title: title,
-                    image: selectedImage,
-                    description: description,
-                    group: .heck,
-                    id: newId,
-                    uid: String(newId)
-                )
-            )
-        case .issue:
-            listModel.niceList.append(
-                ListItem(
-                    title: title,
-                    image: selectedImage,
-                    description: description,
-                    group: .heck,
-                    id: newId,
-                    uid: String(newId)
-                )
-            )
-        }
-    }
+    //func addNewItemToModel(
+//        title: String,
+//                           image: UIImage,
+//                           description: String,
+//                           group: GroupType,
+//                           id: Int) {
+//        switch selectedType {
+//        case .heck:
+//            listModel.heckList.append(
+//                ListItem(
+//                    title: title,
+//                    image: selectedImage,
+//                    description: description,
+//                    group: .heck,
+//                    id: newId,
+//                    uid: String(newId)
+//                )
+//            )
+//        case .nice:
+//            listModel.issueList.append(
+//                ListItem(
+//                    title: title,
+//                    image: selectedImage,
+//                    description: description,
+//                    group: .heck,
+//                    id: newId,
+//                    uid: String(newId)
+//                )
+//            )
+//        case .issue:
+//            listModel.niceList.append(
+//                ListItem(
+//                    title: title,
+//                    image: selectedImage,
+//                    description: description,
+//                    group: .heck,
+//                    id: newId,
+//                    uid: String(newId)
+//                )
+//            )
+//        }
+//    }
     func addNewItemToDB(title: String,
                         image: UIImage,
                         description: String,

@@ -14,7 +14,7 @@ struct PersistenceController {
   let container: NSPersistentContainer
 
     init(inMemory: Bool = false) {
-        container = NSPersistentContainer(name: "UserCoreDataModel")
+        container = NSPersistentContainer(name: "HeckModel")
         container.loadPersistentStores { _, error in
           if let error = error as NSError? {
             fatalError("Unresolved error \(error), \(error.userInfo)")

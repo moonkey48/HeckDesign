@@ -11,17 +11,37 @@ import SwiftUI
 
 struct HeckView: View {
     @State private var showAddModal = false
-    private let listModel = ListModel()
-    private let columns = [ GridItem(.adaptive(minimum: 170)) ]
+    @FetchRequest(entity: CoreListItem.entity(), sortDescriptors: []) var itemList: FetchedResults<CoreListItem>
+    
+    private let columns = [GridItem(.adaptive(minimum: 170))]
     
     var body: some View {
         NavigationStack {
             ScrollView {
 //                FavoriteSampleView(groupType: .heck)
+                
                 Button {
-                    
+                    let heckModel = HeckDesignModel()
+                    heckModel.createItem(title: "hello", desciption: "world", groupType: .heck, imageName: "heck0") { res in
+                        switch res {
+                        case .success(let isSuccess):
+                            print("success \(isSuccess)")
+                        case .failure(let fail):
+                            print(fail)
+                        }
+                    }
                 } label: {
-                    Text("drop table")
+                    Text("create item")
+                }
+                
+                Button {
+                    readList()
+                } label: {
+                    Text("read data")
+                }
+                
+                ForEach(itemList, id: \.uid) { item in
+                    Text(item.title ?? "")
                 }
 
                 LazyVGrid(columns: columns) {
@@ -74,6 +94,16 @@ struct HeckView: View {
                 AddItemView()
             }
             
+        }
+    }
+    
+    private func readList() {
+        let request = CoreListItem.fetchRequest()
+        do {
+            let heckList = try PersistenceController.shared.container.viewContext.fetch(request)
+            print(heckList)
+        } catch {
+            print("fail to read heck data")
         }
     }
 }
