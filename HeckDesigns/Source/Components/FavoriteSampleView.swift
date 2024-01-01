@@ -46,12 +46,8 @@ struct FavoriteSampleView: View {
                             }
                         }
                     }
-                    
                 }
-                
-                
             }
-            
         }
         .onAppear {
             switch groupType {
