@@ -16,7 +16,7 @@ enum ModelError: Error {
     case failToDelete
 }
 
-struct HeckDesignModel {
+struct ListModel {
     let persistenceController = PersistenceController.shared
     
     private func saveContext() throws {

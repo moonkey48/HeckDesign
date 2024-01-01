@@ -21,7 +21,7 @@ struct HeckView: View {
 //                FavoriteSampleView(groupType: .heck)
                 
                 Button {
-                    let heckModel = HeckDesignModel()
+                    let heckModel = ListModel()
                     heckModel.createItem(title: "hello", desciption: "world", groupType: .heck, imageName: "heck0") { res in
                         switch res {
                         case .success(let isSuccess):
@@ -40,42 +40,38 @@ struct HeckView: View {
                     Text("read data")
                 }
                 
-                ForEach(itemList, id: \.uid) { item in
-                    Text(item.title ?? "")
-                }
-
                 LazyVGrid(columns: columns) {
-//                    ForEach(coreListItem, id: \.self) { item in
-//                        NavigationLink {
-//                            ListItemView(item: item)
-//                        } label: {
-//                            VStack(alignment: .leading) {
-//                                ZStack {
-//                                    Image(uiImage: item.image ?? UIImage(named: "addItemDefault")!)
-//                                        .resizable()
-//                                        .scaledToFill()
-//                                        .frame(width: 170, height: 170)
-//                                        .cornerRadius(10)
-//                                    if item.isFavorite == true {
-//                                        VStack {
-//                                            Spacer()
-//                                                .frame(height: 140)
-//                                            HStack {
-//                                                Spacer()
-//                                                    .frame(width: 140)
-//                                                Image(systemName: "star.fill")
-//                                                    .foregroundColor(Color.white)
-//                                                    .opacity(0.9)
-//                                            }
-//                                        }
-//                                    }
-//                                }
-//                                Text(item.title)
-//                                    .font(Font.system(size: 18, weight: .semibold))
-//                                    .foregroundColor(Color.textBlack)
-//                            }
-//                        }
-//                    }
+                    ForEach(itemList, id: \.uid) { item in
+                        NavigationLink {
+                            ListItemView(item: item)
+                        } label: {
+                            VStack(alignment: .leading) {
+                                ZStack {
+                                    Image(uiImage: UIImage(named: item.imageName ?? "addItemDefault")!)
+                                        .resizable()
+                                        .scaledToFill()
+                                        .frame(width: 170, height: 170)
+                                        .cornerRadius(10)
+                                    if item.isFavorite == true {
+                                        VStack {
+                                            Spacer()
+                                                .frame(height: 140)
+                                            HStack {
+                                                Spacer()
+                                                    .frame(width: 140)
+                                                Image(systemName: "star.fill")
+                                                    .foregroundColor(Color.white)
+                                                    .opacity(0.9)
+                                            }
+                                        }
+                                    }
+                                }
+                                Text(item.title ?? "")
+                                    .font(Font.system(size: 18, weight: .semibold))
+                                    .foregroundColor(Color.textBlack)
+                            }
+                        }
+                    }
                 }
             }
             .navigationTitle("Hecks")
