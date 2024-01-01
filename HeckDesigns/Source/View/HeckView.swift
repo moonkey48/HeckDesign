@@ -89,7 +89,6 @@ struct HeckView: View {
             .sheet(isPresented: $showAddModal) {
                 AddItemView()
             }
-            
         }
     }
     

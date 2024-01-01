@@ -59,9 +59,9 @@ struct ListItemView: View {
                 Divider()
                 HStack {
                     Button {
-//                        toggleIsFavorite()
+                        listItemViewModel.toggleIsFavorite(item: item)
                     } label: {
-                        if listItemViewModel.isFavorite == true {
+                        if item.isFavorite == true {
                             Image(systemName: "star.fill")
                                 .font(.system(size: 20))
                                 .foregroundColor(.yellow)

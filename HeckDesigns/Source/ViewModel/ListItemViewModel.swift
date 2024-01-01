@@ -37,18 +37,13 @@ class ListItemViewModel: ObservableObject {
         }
     }
     
-//    func updateItem(){
-//        item.title = self.title
-//        item.description = self.description
-//        item.image = self.image
-//        isEdit = false
-//        fileManager.deleteImage(named: "item\(item.uid)") { _ in
-//        }
-//        fileManager.saveImage(image: self.image, name: "item\(item.uid)", onSuccess: { _ in
-//        })
-//        dbHelper.updateData(id: item.id, title: self.title, description: self.description, groupType: item.group, isFavorite: item.isFavorite, imageName: "item\(item.uid)")
-//    }
-//    
-
+    func toggleIsFavorite(item: CoreListItem) {
+        item.isFavorite.toggle()
+        do {
+            try PersistenceController.shared.container.viewContext.save()
+        } catch {
+            print("fail to toggle isFavorite")
+        }
+    }
 
 }

@@ -35,19 +35,3 @@ struct ListItem: Hashable {
     var id: Int
     var uid: String
 }
-
-enum Gender {
-    case male
-    case female
-}
-
-struct Person {
-    var name: String
-    var age: Int
-    var gender: Gender
-    init(name: String, age: Int, gender: Gender) {
-        self.name = name
-        self.age = age
-        self.gender = gender
-    }
-}
