@@ -31,7 +31,6 @@
 		95D489262B424BC10079D09D /* HeckModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 95D489242B424BC10079D09D /* HeckModel.xcdatamodeld */; };
 		95D489282B4254AF0079D09D /* HeckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D489272B4254AF0079D09D /* HeckViewModel.swift */; };
 		95D4892A2B4289E00079D09D /* ListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D489292B4289E00079D09D /* ListItemViewModel.swift */; };
-		95F4A7EB2A559180009CFCCA /* GitTestFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F4A7EA2A559180009CFCCA /* GitTestFile.swift */; };
 		95F57DBD2A42C48000516E46 /* ImageFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F57DBC2A42C48000516E46 /* ImageFileManager.swift */; };
 		95F57DBF2A42C5CF00516E46 /* ImageSaveTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F57DBE2A42C5CF00516E46 /* ImageSaveTestView.swift */; };
 		95F6E4462A3834190024D0A9 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F6E4452A3834190024D0A9 /* ImagePickerView.swift */; };
@@ -63,7 +62,6 @@
 		95D489252B424BC10079D09D /* HeckModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HeckModel.xcdatamodel; sourceTree = "<group>"; };
 		95D489272B4254AF0079D09D /* HeckViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeckViewModel.swift; sourceTree = "<group>"; };
 		95D489292B4289E00079D09D /* ListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemViewModel.swift; sourceTree = "<group>"; };
-		95F4A7EA2A559180009CFCCA /* GitTestFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitTestFile.swift; sourceTree = "<group>"; };
 		95F57DBC2A42C48000516E46 /* ImageFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFileManager.swift; sourceTree = "<group>"; };
 		95F57DBE2A42C5CF00516E46 /* ImageSaveTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaveTestView.swift; sourceTree = "<group>"; };
 		95F6E4452A3834190024D0A9 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
@@ -230,7 +228,6 @@
 			isa = PBXGroup;
 			children = (
 				95F57DBE2A42C5CF00516E46 /* ImageSaveTestView.swift */,
-				95F4A7EA2A559180009CFCCA /* GitTestFile.swift */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -306,7 +303,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95F4A7EB2A559180009CFCCA /* GitTestFile.swift in Sources */,
 				95D489232B424B490079D09D /* PersistentController.swift in Sources */,
 				95D489262B424BC10079D09D /* HeckModel.xcdatamodeld in Sources */,
 				9552C8062A35FCD600417339 /* ViewExtension.swift in Sources */,

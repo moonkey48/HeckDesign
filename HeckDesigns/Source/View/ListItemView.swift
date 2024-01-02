@@ -10,9 +10,10 @@ import SwiftUI
 
 struct ListItemView: View {
     @Environment(\.presentationMode) var presentationMode
-    var item: CoreListItem
     @ObservedObject private var listItemViewModel = ListItemViewModel()
     @FocusState private var focusField: Field?
+    
+    var item: CoreListItem
     
     private enum Field: Hashable {
         case title, description
@@ -52,7 +53,7 @@ struct ListItemView: View {
                         .submitLabel(.next)
                         
                 } else {
-                    Text(listItemViewModel.title)
+                    Text(item.title ?? "")
                         .title()
                 }
                 
@@ -84,7 +85,7 @@ struct ListItemView: View {
                                 .description()
                                 .focused($focusField, equals: .description)
                         } else {
-                            Text(listItemViewModel.description)
+                            Text(item.designDescription ?? "")
                                 .description()
                         }
                     }
@@ -114,44 +115,34 @@ struct ListItemView: View {
                 listItemViewModel.deleteItem(item: item)
             }
         }
-//        .toolbar {
-//            if listItemViewModel.isEdit {
-////                ToolbarItem(placement: .navigationBarLeading) {
-////                    Button {
-////                        listItemViewModel.title = item.title
-////                        listItemViewModel.description = item.description
-////                        listItemViewModel.image = item.image ?? UIImage(named: "addItemDefault")!
-////                        listItemViewModel.isEdit = false
-////                    } label: {
-////                        Text("Cancel")
-////                            .navButton()
-////                            .foregroundColor(Color.red)
-////                    }
-////                }
-////                ToolbarItem(placement: .navigationBarTrailing) {
-////                    Button {
-////                        listItemViewModel.ㅕㅔㅇ
-////                    } label: {
-////                        Text("Done")
-////                            .navButton()
-////                    }
-////                }
-//            } else {
-//                ToolbarItem(placement: .navigationBarTrailing) {
-//                    Button {
-//                        self.title = item.title
-//                        self.description = item.description
-//                        self.image = item.image ?? UIImage(named: "addItemDefault")!
-//                        self.isEdit = true
-//                    } label: {
-//                        Text("Edit")
-//                            .navButton()
-//                            .fontWeight(.semibold)
-//                    }
-//                }
-//            }
-//        }
-        
-        
+        .toolbar {
+            if listItemViewModel.isEdit {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        listItemViewModel.isEdit = false
+                    } label: {
+                        Text("Cancel")
+                            .navButton()
+                            .foregroundColor(Color.red)
+                    }
+                }
+            }
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    if listItemViewModel.isEdit {
+                        listItemViewModel.isEdit = false
+                    } else {
+                        listItemViewModel.isEdit = true
+                        listItemViewModel.title = item.title ?? ""
+                        listItemViewModel.description = item.designDescription ?? ""
+                        listItemViewModel.image = UIImage(named: item.imageName ?? "heck1") ?? UIImage(named: "addItemDefault")!
+                    }
+                } label: {
+                    Text(listItemViewModel.isEdit ? "Done" : "Edit")
+                        .navButton()
+                        .fontWeight(.semibold)
+                }
+            }
+        }
     }
 }

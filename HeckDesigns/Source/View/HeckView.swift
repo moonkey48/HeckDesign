@@ -33,13 +33,6 @@ struct HeckView: View {
                 } label: {
                     Text("create item")
                 }
-                
-                Button {
-                    readList()
-                } label: {
-                    Text("read data")
-                }
-                
                 LazyVGrid(columns: columns) {
                     ForEach(itemList, id: \.uid) { item in
                         NavigationLink {
@@ -89,16 +82,6 @@ struct HeckView: View {
             .sheet(isPresented: $showAddModal) {
                 AddItemView()
             }
-        }
-    }
-    
-    private func readList() {
-        let request = CoreListItem.fetchRequest()
-        do {
-            let heckList = try PersistenceController.shared.container.viewContext.fetch(request)
-            print(heckList)
-        } catch {
-            print("fail to read heck data")
         }
     }
 }
