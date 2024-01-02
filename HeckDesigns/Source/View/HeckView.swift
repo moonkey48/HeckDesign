@@ -12,13 +12,13 @@ import SwiftUI
 struct HeckView: View {
     @State private var showAddModal = false
     @FetchRequest(entity: CoreListItem.entity(), sortDescriptors: []) var itemList: FetchedResults<CoreListItem>
-    
+
     private let columns = [GridItem(.adaptive(minimum: 170))]
     
     var body: some View {
         NavigationStack {
             ScrollView {
-//                FavoriteSampleView(groupType: .heck)
+                FavoriteSampleView(groupType: .heck)
                 
                 Button {
                     let heckModel = ListModel()

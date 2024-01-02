@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FavoritesView: View {
-    var groupType: GroupType = .heck
+    var groupType: GroupType
     private let columns = [ GridItem(.adaptive(minimum: 170)) ]
     
     var body: some View {
@@ -45,11 +45,5 @@ struct FavoritesView: View {
 //            }
         }
         .navigationTitle("Favorites")
-    }
-}
-
-struct FavoritesView_Previews: PreviewProvider {
-    static var previews: some View {
-        FavoritesView()
     }
 }
