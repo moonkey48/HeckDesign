@@ -40,6 +40,8 @@ struct ListModel {
         newItem.groupType = groupType.rawValue
         newItem.imageName = imageName
         newItem.uid = UUID().uuidString
+        newItem.isFavorite = false
+        newItem.generatedDate = Date()
         
         do {
             try saveContext()

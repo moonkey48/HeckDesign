@@ -34,4 +34,5 @@ struct ListItem: Hashable {
     var isFavorite = false
     var id: Int
     var uid: String
+    var generatedDate: Date
 }

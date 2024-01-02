@@ -34,7 +34,7 @@ struct ListItemView: View {
                             listItemViewModel.isSelectingImage = true
                         }
                 } else {
-                    Image(uiImage: UIImage(named: item.imageName ?? "heck0")!)
+                    Image(uiImage: UIImage(named: item.imageName ?? "heck0") ?? UIImage(named: "addItemDefault")!)
                         .resizable()
                         .scaledToFit()
                         .clipped()

@@ -15,7 +15,8 @@ var dummyHeckList = [
         group: .heck,
         isFavorite: true,
         id: 0,
-        uid: UUID().uuidString
+        uid: UUID().uuidString,
+        generatedDate: Date()
     ),
     ListItem(
         title: "아 뭘 사랑하냐고",
@@ -23,7 +24,8 @@ var dummyHeckList = [
         description: "뜬금없는 당신의 사랑고백. 공공장소에서 맥락 없는 사랑고백 성공 확률에 대한 구글링 한번만 했었다면...",
         group: .heck,
         id: 1,
-        uid: UUID().uuidString
+        uid: UUID().uuidString,
+        generatedDate: Date()
     ),
     ListItem(
         title: "따뜻한 콜드브루",
@@ -32,7 +34,8 @@ var dummyHeckList = [
         group: .heck,
         isFavorite: true,
         id: 2,
-        uid: UUID().uuidString
+        uid: UUID().uuidString,
+        generatedDate: Date()
     ),
     ListItem(
         title: "취소할 권리",
@@ -40,7 +43,8 @@ var dummyHeckList = [
         description: "너는 고르기 전에는 나갈 수 없다. 당신이 비록 고객이라 할지라도.",
         group: .heck,
         id: 3,
-        uid: UUID().uuidString
+        uid: UUID().uuidString,
+        generatedDate: Date()
     ),
     ListItem(
         title: "선을 넘은 자",
@@ -48,7 +52,8 @@ var dummyHeckList = [
         description: "넘지 말아야할 선을 넘으면 불편하다. 넘지 말야야 하는 것은 넘지 말자",
         group: .heck,
         id: 4,
-        uid: UUID().uuidString
+        uid: UUID().uuidString,
+        generatedDate: Date()
     ),
     ListItem(
         title: "손목 지압용 책상",
@@ -56,7 +61,8 @@ var dummyHeckList = [
         description: "공부보다는 감성이 먼저입니다. 하지만 감성마저 챙기지 못한...",
         group: .heck,
         id: 5,
-        uid: UUID().uuidString
+        uid: UUID().uuidString,
+        generatedDate: Date()
     ),
     ListItem(
         title: "기회 단 ?번뿐",
@@ -64,7 +70,8 @@ var dummyHeckList = [
         description: "그린카에서 인증을 하는데 몇번 인증을 할 수 있는지 알려주지 않고 인증 횟수가 초과되었다고 말해준다. 얼마 후에 다시 인증을 할 수 있는지도 안알려줘서 그린카 앱을 삭제하고 싶어진다. 어째서 이런 사용성을 만든 것일까?",
         group: .heck,
         id: 6,
-        uid: UUID().uuidString
+        uid: UUID().uuidString,
+        generatedDate: Date()
     ),
     ListItem(
         title: "인생은 실전이다",
@@ -72,7 +79,8 @@ var dummyHeckList = [
         description: "그린카에서 비밀번호를 재설정해야 했다. 하지만 재설정 오류라고 뜨면서 다시 처음부터 사용자 인증 페이지로 이동하게 되었다. 비밀번호 재설정이 틀렸다고 로그인페이지로 이동하는 사용성은 태어나서 처음이다. 그린카는 서비스를 하고 싶은걸까. 아님 UX 디자이너가 그린카를 망하게 하고 싶은걸까.",
         group: .heck,
         id: 7,
-        uid: UUID().uuidString
+        uid: UUID().uuidString,
+        generatedDate: Date()
     ),
 ]
 
@@ -84,7 +92,8 @@ var dummyNiceList = [
         group: .nice,
         isFavorite: true,
         id: 0,
-        uid: "53151"
+        uid: "53151",
+        generatedDate: Date()
     ),
     ListItem(
         title: "완벽한 구매 경험",
@@ -92,7 +101,8 @@ var dummyNiceList = [
         description: "유니클로의 결제 프로세스는 아름답다. 바구나에 담은 제품을 그저 Container에 올려두기만하면 제품을 자동으로 스캔해서 바로 결제가 진행된다. 점원을 만나지 않고 스캔도 없이 쉽고 빠르게 옷을 구입할 수 있는 기분좋은 구매 경험이었다.",
         group: .nice,
         id: 1,
-        uid: UUID().uuidString
+        uid: UUID().uuidString,
+        generatedDate: Date()
     ),
     ListItem(
         title: "지도는 네이버",
@@ -101,7 +111,8 @@ var dummyNiceList = [
         group: .nice,
         isFavorite: true,
         id: 2,
-        uid: UUID().uuidString
+        uid: UUID().uuidString,
+        generatedDate: Date()
     ),
 ]
 
@@ -113,6 +124,7 @@ var dummyIssueList = [
         group: .issue,
         isFavorite: true,
         id: 3,
-        uid: UUID().uuidString
+        uid: UUID().uuidString,
+        generatedDate: Date()
     ),
 ]

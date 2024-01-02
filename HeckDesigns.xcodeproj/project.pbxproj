@@ -31,6 +31,7 @@
 		95D489262B424BC10079D09D /* HeckModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 95D489242B424BC10079D09D /* HeckModel.xcdatamodeld */; };
 		95D489282B4254AF0079D09D /* HeckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D489272B4254AF0079D09D /* HeckViewModel.swift */; };
 		95D4892A2B4289E00079D09D /* ListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D489292B4289E00079D09D /* ListItemViewModel.swift */; };
+		95D4892C2B43DEB60079D09D /* AddItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D4892B2B43DEB60079D09D /* AddItemViewModel.swift */; };
 		95F57DBD2A42C48000516E46 /* ImageFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F57DBC2A42C48000516E46 /* ImageFileManager.swift */; };
 		95F57DBF2A42C5CF00516E46 /* ImageSaveTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F57DBE2A42C5CF00516E46 /* ImageSaveTestView.swift */; };
 		95F6E4462A3834190024D0A9 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F6E4452A3834190024D0A9 /* ImagePickerView.swift */; };
@@ -62,6 +63,7 @@
 		95D489252B424BC10079D09D /* HeckModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HeckModel.xcdatamodel; sourceTree = "<group>"; };
 		95D489272B4254AF0079D09D /* HeckViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeckViewModel.swift; sourceTree = "<group>"; };
 		95D489292B4289E00079D09D /* ListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemViewModel.swift; sourceTree = "<group>"; };
+		95D4892B2B43DEB60079D09D /* AddItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewModel.swift; sourceTree = "<group>"; };
 		95F57DBC2A42C48000516E46 /* ImageFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFileManager.swift; sourceTree = "<group>"; };
 		95F57DBE2A42C5CF00516E46 /* ImageSaveTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaveTestView.swift; sourceTree = "<group>"; };
 		95F6E4452A3834190024D0A9 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 			children = (
 				95D489272B4254AF0079D09D /* HeckViewModel.swift */,
 				95D489292B4289E00079D09D /* ListItemViewModel.swift */,
+				95D4892B2B43DEB60079D09D /* AddItemViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				95979FFA2A2F4DB90004431D /* HeckDesignsApp.swift in Sources */,
 				95F57DBF2A42C5CF00516E46 /* ImageSaveTestView.swift in Sources */,
 				9552C80C2A3604DC00417339 /* ColorExtension.swift in Sources */,
+				95D4892C2B43DEB60079D09D /* AddItemViewModel.swift in Sources */,
 				95D488FF2B4192EA0079D09D /* ListModelType.swift in Sources */,
 				95D489282B4254AF0079D09D /* HeckViewModel.swift in Sources */,
 				9597A00E2A2F5BDF0004431D /* NiceView.swift in Sources */,

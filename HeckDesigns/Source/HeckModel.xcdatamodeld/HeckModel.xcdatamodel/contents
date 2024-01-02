@@ -2,6 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22222" systemVersion="23A344" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
     <entity name="CoreListItem" representedClassName="CoreListItem" syncable="YES" codeGenerationType="class">
         <attribute name="designDescription" attributeType="String"/>
+        <attribute name="generatedDate" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="groupType" attributeType="String"/>
         <attribute name="imageName" attributeType="String"/>
         <attribute name="isFavorite" attributeType="Boolean" usesScalarValueType="YES"/>

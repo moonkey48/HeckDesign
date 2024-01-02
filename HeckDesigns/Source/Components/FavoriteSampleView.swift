@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct FavoriteSampleView: View {
-    @FetchRequest(entity: CoreListItem.entity(), sortDescriptors: [], predicate: NSPredicate(format: "isFavorite == TRUE")) var itemList: FetchedResults<CoreListItem>
+    @FetchRequest(entity: CoreListItem.entity(), sortDescriptors: [NSSortDescriptor(key: "generatedDate", ascending: false)], predicate: NSPredicate(format: "isFavorite == TRUE")) var itemList: FetchedResults<CoreListItem>
     
-    var groupType: GroupType
+    var groupType: GroupType = .heck
     
     var body: some View {
         VStack {
@@ -51,5 +51,8 @@ struct FavoriteSampleView: View {
             }
         }
         .padding()
+        .onAppear {
+            self.itemList.nsPredicate = NSPredicate(format: "isFavorite == TRUE && groupType == %@", groupType.rawValue)
+        }
     }
 }

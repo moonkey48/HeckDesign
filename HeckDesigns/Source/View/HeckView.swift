@@ -8,10 +8,11 @@
 import CoreData
 import SwiftUI
 
-
 struct HeckView: View {
     @State private var showAddModal = false
-    @FetchRequest(entity: CoreListItem.entity(), sortDescriptors: []) var itemList: FetchedResults<CoreListItem>
+    @FetchRequest(entity: CoreListItem.entity(), sortDescriptors: [
+        NSSortDescriptor(key: "generatedDate", ascending: false)
+    ], predicate: NSPredicate(format: "groupType == %@", "heck")) var itemList: FetchedResults<CoreListItem>
 
     private let columns = [GridItem(.adaptive(minimum: 170))]
     
@@ -40,7 +41,7 @@ struct HeckView: View {
                         } label: {
                             VStack(alignment: .leading) {
                                 ZStack {
-                                    Image(uiImage: UIImage(named: item.imageName ?? "addItemDefault")!)
+                                    Image(uiImage: UIImage(named: item.imageName ?? "addItemDefault") ?? UIImage(named: "addItemDefault")!)
                                         .resizable()
                                         .scaledToFill()
                                         .frame(width: 170, height: 170)
