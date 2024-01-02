@@ -12,10 +12,12 @@ struct FavoriteSampleView: View {
     
     var groupType: GroupType = .heck
     
+    private let imageFileManager = ImageFileManager.shared
+    
     var body: some View {
         VStack {
             HStack(alignment: .center) {
-                Text("Favorite")
+                Text("Favorites")
                     .subTitle()
                 Image(systemName: "star.fill")
                     .foregroundColor(Color.yellow)
@@ -35,7 +37,9 @@ struct FavoriteSampleView: View {
                             ListItemView(item: item)
                         } label: {
                             VStack(alignment: .leading) {
-                                Image(uiImage: UIImage(named: item.imageName ?? "addItemDefault") ?? UIImage(named: "addItemDefault")!)
+                                Image(
+                                    uiImage: imageFileManager.getSavedImage(named: item.imageName ?? "addItemDefault")
+                                        ?? UIImage(named: "addItemDefault")!)
                                     .resizable()
                                     .scaledToFill()
                                     .frame(width: 140, height: 140)

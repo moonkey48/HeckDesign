@@ -14,6 +14,7 @@ struct ListItemView: View {
     @FocusState private var focusField: Field?
     
     var item: CoreListItem
+    private let imageFileManager = ImageFileManager.shared
     
     private enum Field: Hashable {
         case title, description
@@ -23,7 +24,8 @@ struct ListItemView: View {
         VStack {
             VStack(alignment: .center) {
                 if listItemViewModel.isEdit {
-                    Image(uiImage: UIImage(named: item.imageName ?? "heck0")!)
+                    Image(uiImage: imageFileManager.getSavedImage(named: item.imageName ?? "")
+                             ?? UIImage(named:"heck0")!)
                         .resizable()
                         .scaledToFit()
                         .clipped()
@@ -34,7 +36,8 @@ struct ListItemView: View {
                             listItemViewModel.isSelectingImage = true
                         }
                 } else {
-                    Image(uiImage: UIImage(named: item.imageName ?? "heck0") ?? UIImage(named: "addItemDefault")!)
+                    Image(uiImage: imageFileManager.getSavedImage(named: item.imageName ?? "addItemDefault")
+                            ?? UIImage(named: "addItemDefault")!)
                         .resizable()
                         .scaledToFit()
                         .clipped()
@@ -112,7 +115,8 @@ struct ListItemView: View {
                 listItemViewModel.isDelete = false
             }
             Button("삭제", role: .destructive) {
-                listItemViewModel.deleteItem(item: item)
+                listItemViewModel.deleteItem(item: item, imageName: item.imageName ?? "")
+                presentationMode.wrappedValue.dismiss()
             }
         }
         .toolbar {

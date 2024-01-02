@@ -20,9 +20,9 @@ class ListItemViewModel: ObservableObject {
     private let listModel = ListModel()
     private let fileManager = ImageFileManager.shared
         
-    func deleteItem(item: NSManagedObject){
+    func deleteItem(item: NSManagedObject, imageName: String){
         isEdit = false
-        listModel.deleteItem(item) { res in
+        listModel.deleteItem(item, imageName: imageName) { res in
             switch res {
             case .success(let isSuccess):
                 print("success to delete item \(isSuccess)")

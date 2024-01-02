@@ -12,6 +12,7 @@ struct NiceView: View {
     @FetchRequest(entity: CoreListItem.entity(), sortDescriptors: [], predicate: NSPredicate(format: "groupType == %@", "nice")) var itemList: FetchedResults<CoreListItem>
 
     private let columns = [GridItem(.adaptive(minimum: 170))]
+    private let imageFileManager = ImageFileManager.shared
     
     var body: some View {
         NavigationStack {
@@ -38,7 +39,9 @@ struct NiceView: View {
                         } label: {
                             VStack(alignment: .leading) {
                                 ZStack {
-                                    Image(uiImage: UIImage(named: item.imageName ?? "addItemDefault") ?? UIImage(named: "addItemDefault")!)
+                                    Image(uiImage: imageFileManager.getSavedImage(
+                                        named: item.imageName ?? "addItemDefault")
+                                    ?? UIImage(named: "addItemDefault")!)
                                         .resizable()
                                         .scaledToFill()
                                         .frame(width: 170, height: 170)

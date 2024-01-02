@@ -17,7 +17,8 @@ enum ModelError: Error {
 }
 
 struct ListModel {
-    let persistenceController = PersistenceController.shared
+    private let persistenceController = PersistenceController.shared
+    private let imageFileManager = ImageFileManager.shared
     
     private func saveContext() throws {
         do {
@@ -76,10 +77,18 @@ struct ListModel {
     
     func deleteItem(
         _ object: NSManagedObject,
+        imageName: String,
         completion: @escaping (Result<Bool, ModelError>) -> Void
     ) {
         persistenceController.container.viewContext.delete(object)
         
+        imageFileManager.deleteImage(named: imageName) { res in
+            if res {
+                print("success to delete Image")
+            } else {
+                print("fail to delete Image")
+            }
+        }
         do {
             try saveContext()
             completion(.success(true))

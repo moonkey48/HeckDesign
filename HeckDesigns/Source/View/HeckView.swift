@@ -15,6 +15,7 @@ struct HeckView: View {
     ], predicate: NSPredicate(format: "groupType == %@", "heck")) var itemList: FetchedResults<CoreListItem>
 
     private let columns = [GridItem(.adaptive(minimum: 170))]
+    private let imageFileManager = ImageFileManager.shared
     
     var body: some View {
         NavigationStack {
@@ -41,7 +42,10 @@ struct HeckView: View {
                         } label: {
                             VStack(alignment: .leading) {
                                 ZStack {
-                                    Image(uiImage: UIImage(named: item.imageName ?? "addItemDefault") ?? UIImage(named: "addItemDefault")!)
+                                    Image(
+                                        uiImage: imageFileManager.getSavedImage(
+                                            named: item.imageName ?? "addItemDefault")
+                                        ?? UIImage(named: "addItemDefault")!)
                                         .resizable()
                                         .scaledToFill()
                                         .frame(width: 170, height: 170)
