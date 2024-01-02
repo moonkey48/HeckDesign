@@ -21,20 +21,6 @@ struct HeckView: View {
         NavigationStack {
             ScrollView {
                 FavoriteSampleView(groupType: .heck)
-                
-                Button {
-                    let heckModel = ListModel()
-                    heckModel.createItem(title: "hello", desciption: "world", groupType: .heck, imageName: "heck0") { res in
-                        switch res {
-                        case .success(let isSuccess):
-                            print("success \(isSuccess)")
-                        case .failure(let fail):
-                            print(fail)
-                        }
-                    }
-                } label: {
-                    Text("create item")
-                }
                 LazyVGrid(columns: columns) {
                     ForEach(itemList, id: \.uid) { item in
                         NavigationLink {

@@ -134,6 +134,8 @@ struct ListItemView: View {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
                     if listItemViewModel.isEdit {
+                        item.title = listItemViewModel.title
+                        item.designDescription = listItemViewModel.description
                         listItemViewModel.isEdit = false
                     } else {
                         listItemViewModel.isEdit = true
