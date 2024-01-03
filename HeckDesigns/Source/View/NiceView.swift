@@ -17,7 +17,10 @@ struct NiceView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                FavoriteSampleView(groupType: .nice)
+                FavoriteSampleView(
+                    itemList: itemList,
+                    groupType: .nice)
+                
                 LazyVGrid(columns: columns) {
                     ForEach(itemList, id: \.uid) { item in
                         NavigationLink {

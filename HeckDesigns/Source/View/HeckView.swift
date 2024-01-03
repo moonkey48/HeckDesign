@@ -20,7 +20,7 @@ struct HeckView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                FavoriteSampleView(groupType: .heck)
+                FavoriteSampleView(itemList: itemList, groupType: .heck)
                 LazyVGrid(columns: columns) {
                     ForEach(itemList, id: \.uid) { item in
                         NavigationLink {

@@ -14,7 +14,7 @@ class AddItemViewModel: ObservableObject {
     @Published var selectedImage = UIImage(named: "addItemDefault")!
     @Published var isSelecting = false
     @Published var isLoading = false
-    @Published var newId = "new124"
+    @Published var newId = UUID().uuidString
     
     private let listModel = ListModel()
     private let fileManager = ImageFileManager.shared
