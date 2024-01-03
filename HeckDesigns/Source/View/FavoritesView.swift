@@ -38,14 +38,7 @@ struct FavoritesView: View {
             }
         }
         .onAppear {
-//            switch groupType {
-//            case .heck:
-//                gridList = ListModel.shared.heckList
-//            case .nice:
-//                gridList = ListModel.shared.niceList
-//            case .issue:
-//                gridList = ListModel.shared.issueList
-//            }
+            favoriteList.nsPredicate = NSPredicate(format: "isFavorite == TRUE && groupType == %@", groupType.rawValue)
         }
         .navigationTitle("Favorites")
     }

@@ -31,7 +31,7 @@ struct FavoriteSampleView: View {
             
             ScrollView(.horizontal, showsIndicators: false){
                 HStack {
-                    ForEach(itemList, id: \.self) { item in
+                    ForEach(itemList.filter { $0.isFavorite == true }, id: \.self) { item in
                         NavigationLink {
                             ListItemView(item: item)
                         } label: {
