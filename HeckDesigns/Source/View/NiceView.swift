@@ -1,5 +1,5 @@
 //
-//  HeckView.swift
+//  NiceView.swift
 //  HeckDesigns
 //
 //  Created by Seungui Moon on 2023/06/06.
@@ -7,31 +7,30 @@
 
 import SwiftUI
 
-
-struct HeckView: View {
+struct NiceView: View {
     @State private var showAddModal = false
-    @ObservedObject private var model = ListModel.shared
-    private let dbHelper = DBHelper.shared
-    private let columns = [ GridItem(.adaptive(minimum: 170)) ]
+    @FetchRequest(entity: CoreListItem.entity(), sortDescriptors: [], predicate: NSPredicate(format: "groupType == %@", "nice")) var itemList: FetchedResults<CoreListItem>
+
+    private let columns = [GridItem(.adaptive(minimum: 170))]
+    private let imageFileManager = ImageFileManager.shared
     
     var body: some View {
         NavigationStack {
             ScrollView {
-                FavoriteSampleView(groupType: .heck)
-                Button {
-                    dbHelper.dropTable(tableName: "heckTable")
-                } label: {
-                    Text("drop table")
-                }
-
+                FavoriteSampleView(
+                    itemList: itemList,
+                    groupType: .nice)
+                
                 LazyVGrid(columns: columns) {
-                    ForEach($model.heckList, id: \.self) { $item in
+                    ForEach(itemList, id: \.uid) { item in
                         NavigationLink {
-                            ListItemView(item: $item)
+                            ListItemView(item: item)
                         } label: {
                             VStack(alignment: .leading) {
                                 ZStack {
-                                    Image(uiImage: item.image ?? UIImage(named: "addItemDefault")!)
+                                    Image(uiImage: imageFileManager.getSavedImage(
+                                        named: item.imageName ?? "addItemDefault")
+                                    ?? UIImage(named: "addItemDefault")!)
                                         .resizable()
                                         .scaledToFill()
                                         .frame(width: 170, height: 170)
@@ -50,7 +49,7 @@ struct HeckView: View {
                                         }
                                     }
                                 }
-                                Text(item.title)
+                                Text(item.title ?? "")
                                     .font(Font.system(size: 18, weight: .semibold))
                                     .foregroundColor(Color.textBlack)
                             }
@@ -58,7 +57,7 @@ struct HeckView: View {
                     }
                 }
             }
-            .navigationTitle("Hecks")
+            .navigationTitle("Nices")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
@@ -73,14 +72,12 @@ struct HeckView: View {
             .sheet(isPresented: $showAddModal) {
                 AddItemView()
             }
-            
         }
     }
 }
 
-
-struct HeckView_Previews: PreviewProvider {
+struct NiceView_Previews: PreviewProvider {
     static var previews: some View {
-        HeckView()
+        NiceView()
     }
 }
